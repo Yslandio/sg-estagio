@@ -258,7 +258,7 @@
 
         <div class="row">
             <?php
-            // vamos montar o ano atual
+            // vamos montar o calendário
             if (isset($dateStartStage) && isset($dateEndSemester)) {
                 $yearStartStage = date("Y", strtotime(implode('-', array_reverse(explode('/', $dateStartStage)))));
                 $yearEndSemester = date("Y", strtotime(implode('-', array_reverse(explode('/', $dateEndSemester)))));
