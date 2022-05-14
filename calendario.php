@@ -6,11 +6,12 @@ function feriados($ano) {
 
   $dia = 86400;
   $datas = array();
+  echo("Meio da função 1")."<br>"; // Teste
   $datas['pascoa'] = easter_date($ano);
+  echo("Meio da função 2")."<br>"; // Teste
   $datas['sexta_santa'] = $datas['pascoa'] - (2 * $dia);
   $datas['carnaval'] = $datas['pascoa'] - (47 * $dia);
   $datas['corpus_cristi'] = $datas['pascoa'] + (60 * $dia);
-  echo("Meio da função")."<br>"; // Teste
   $feriados = array (
       '01/01/'.$ano,
       '02/02/'.$ano, // Navegantes
