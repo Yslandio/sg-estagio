@@ -109,7 +109,7 @@
             </form>
 
             <?php
-            include('calendario.php');
+            require('calendario.php');
 
             if (isset($_GET['submit']) && !empty($_GET['hours_stage_course']) && !empty($_GET['date_start_stage']) && !empty($_GET['date_end_semester'])) {
                 if (strtotime($_GET['date_start_stage']) < strtotime($_GET['date_end_semester'])) {
@@ -181,7 +181,8 @@
 
                             foreach($period as $dt) {
                                 echo("Dentro do Foreach")."<br>"; // Teste
-                                var_dump(feriados($dt->format('Y')))."<br>"; // Teste
+                                var_dump($dt->format('Y'))."<br>"; // Teste
+                                var_dump(feriados('2022'))."<br>"; // Teste
                                 if (!in_array($dt->format('d/m/Y'), feriados($dt->format('Y'))) && in_array($dt->format('N'), $days)) {
                                     echo("Dentro do IF")."<br>"; // Teste
                                     switch($dt->format('N')) {
