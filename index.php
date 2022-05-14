@@ -216,14 +216,12 @@
                                             }
                                             break;
                                     }
-
-                                    echo("Teste 1")."<br>"; // Teste
                                     
                                     $dateEndStage = $dt->format('d/m/Y');
                                     if ($hoursStage >= $hoursStageCourse) break;
                                 }
                             }
-                            echo("Teste 2")."<br>"; // Teste
+                            echo("Fim do IF")."<br>"; // Teste
                         } else {
                             echo '<div class="alert alert-danger text-center mb-0 mt-3">Informe as hora(s)/minutos do(s) dia(s) de estágio!</div>';
                         }
@@ -265,9 +263,9 @@
         <div class="row">
             <?php
             // vamos montar o calendário
-            echo("Teste 3")."<br>"; // Teste
+            echo("Teste 1")."<br>"; // Teste
             if (isset($dateStartStage) && isset($dateEndSemester)) {
-                echo("Teste 4")."<br>"; // Teste
+                echo("Teste 2")."<br>"; // Teste
                 $yearStartStage = date("Y", strtotime(implode('-', array_reverse(explode('/', $dateStartStage)))));
                 $yearEndSemester = date("Y", strtotime(implode('-', array_reverse(explode('/', $dateEndSemester)))));
 
