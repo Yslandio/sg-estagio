@@ -179,11 +179,9 @@
                             $total_days = $end->diff($start)->days;
                             $period = new \DatePeriod($start, new \DateInterval('P1D'), $end);
 
-                            echo("Teste 1")."<br>"; // Teste
-
                             foreach($period as $dt) {
-                                echo("Dentro do foreach")."<br>"; // Teste
                                 if (!in_array($dt->format('d/m/Y'), feriados($dt->format('Y'))) && in_array($dt->format('N'), $days)) {
+                                    echo("Teste")."<br>"; // Teste
                                     switch($dt->format('N')) {
                                         case 1:
                                             if ($monday) {
@@ -217,6 +215,8 @@
                                             break;
                                     }
 
+                                    echo("Teste 1")."<br>"; // Teste
+                                    
                                     $dateEndStage = $dt->format('d/m/Y');
                                     if ($hoursStage >= $hoursStageCourse) break;
                                 }
