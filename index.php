@@ -180,10 +180,7 @@
                             $period = new \DatePeriod($start, new \DateInterval('P1D'), $end);
 
                             foreach($period as $dt) {
-                                echo("Dentro do Foreach")."<br>"; // Teste
-                                var_dump($dt->format('Y'))."<br>"; // Teste
                                 if (!in_array($dt->format('d/m/Y'), feriados($dt->format('Y'))) && in_array($dt->format('N'), $days)) {
-                                    echo("Dentro do IF")."<br>"; // Teste
                                     switch($dt->format('N')) {
                                         case 1:
                                             if ($monday) {
@@ -221,7 +218,6 @@
                                     if ($hoursStage >= $hoursStageCourse) break;
                                 }
                             }
-                            echo("Fim do IF")."<br>"; // Teste
                         } else {
                             echo '<div class="alert alert-danger text-center mb-0 mt-3">Informe as hora(s)/minutos do(s) dia(s) de estágio!</div>';
                         }
@@ -263,9 +259,7 @@
         <div class="row">
             <?php
             // vamos montar o calendário
-            echo("Teste 1")."<br>"; // Teste
             if (isset($dateStartStage) && isset($dateEndSemester)) {
-                echo("Teste 2")."<br>"; // Teste
                 $yearStartStage = date("Y", strtotime(implode('-', array_reverse(explode('/', $dateStartStage)))));
                 $yearEndSemester = date("Y", strtotime(implode('-', array_reverse(explode('/', $dateEndSemester)))));
 
