@@ -171,8 +171,6 @@
 
                         $dateEndStage = '';
 
-                        echo("Chegeui aqui!"); // Teste
-
                         if ($hoursWeek != 0 || $minutesWeek != 0) {
                             $start = new \DateTime($_GET['date_start_stage']);
                             $end = new \DateTime($_GET['date_end_semester']);
@@ -181,9 +179,10 @@
                             $total_days = $end->diff($start)->days;
                             $period = new \DatePeriod($start, new \DateInterval('P1D'), $end);
 
-                            echo("Teste 1"); // Teste
+                            echo("Teste 1")."<br>"; // Teste
 
                             foreach($period as $dt) {
+                                echo("Dentro do foreach")."<br>"; // Teste
                                 if (!in_array($dt->format('d/m/Y'), feriados($dt->format('Y'))) && in_array($dt->format('N'), $days)) {
                                     switch($dt->format('N')) {
                                         case 1:
@@ -222,7 +221,7 @@
                                     if ($hoursStage >= $hoursStageCourse) break;
                                 }
                             }
-                            echo("Teste 2"); // Teste
+                            echo("Teste 2")."<br>"; // Teste
                         } else {
                             echo '<div class="alert alert-danger text-center mb-0 mt-3">Informe as hora(s)/minutos do(s) dia(s) de estágio!</div>';
                         }
@@ -264,8 +263,9 @@
         <div class="row">
             <?php
             // vamos montar o calendário
+            echo("Teste 3")."<br>"; // Teste
             if (isset($dateStartStage) && isset($dateEndSemester)) {
-                echo("Teste 3"); // Teste
+                echo("Teste 4")."<br>"; // Teste
                 $yearStartStage = date("Y", strtotime(implode('-', array_reverse(explode('/', $dateStartStage)))));
                 $yearEndSemester = date("Y", strtotime(implode('-', array_reverse(explode('/', $dateEndSemester)))));
 
