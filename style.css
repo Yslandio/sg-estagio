@@ -1,0 +1,25 @@
+.form-label {
+    margin-top: 0.5rem;
+}
+
+th {
+    font-size: 12pt;
+}
+
+td {
+    font-size: 10pt;
+}
+
+@media screen and (max-width: 1400px) {
+    .box-day {
+        width: 150px;
+    }
+
+    th {
+        font-size: 10pt;
+    }
+    
+    td {
+        font-size: 8pt;
+    }
+}
