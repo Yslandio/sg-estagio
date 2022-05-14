@@ -7,7 +7,7 @@ function feriados($ano) {
   $dia = 86400;
   $datas = array();
   echo("Meio da função 1")."<br>"; // Teste
-  $datas['pascoa'] = easter_date($ano);
+  // $datas['pascoa'] = easter_date($ano);
   echo("Meio da função 2")."<br>"; // Teste
   $datas['sexta_santa'] = $datas['pascoa'] - (2 * $dia);
   $datas['carnaval'] = $datas['pascoa'] - (47 * $dia);
