@@ -180,8 +180,10 @@
                             $period = new \DatePeriod($start, new \DateInterval('P1D'), $end);
 
                             foreach($period as $dt) {
+                                echo("Dentro do Foreach")."<br>"; // Teste
+                                var_dump(feriados($dt->format('Y')))."<br>"; // Teste
                                 if (!in_array($dt->format('d/m/Y'), feriados($dt->format('Y'))) && in_array($dt->format('N'), $days)) {
-                                    echo("Teste")."<br>"; // Teste
+                                    echo("Dentro do IF")."<br>"; // Teste
                                     switch($dt->format('N')) {
                                         case 1:
                                             if ($monday) {
