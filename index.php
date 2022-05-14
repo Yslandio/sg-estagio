@@ -108,8 +108,6 @@
                 </div>
             </form>
 
-            <script src="script.js"></script>
-
             <?php
             include('calendario.php');
 
@@ -173,6 +171,8 @@
 
                         $dateEndStage = '';
 
+                        echo("Chegeui aqui!"); // Teste
+
                         if ($hoursWeek != 0 || $minutesWeek != 0) {
                             $start = new \DateTime($_GET['date_start_stage']);
                             $end = new \DateTime($_GET['date_end_semester']);
@@ -180,6 +180,8 @@
 
                             $total_days = $end->diff($start)->days;
                             $period = new \DatePeriod($start, new \DateInterval('P1D'), $end);
+
+                            echo("Teste 1"); // Teste
 
                             foreach($period as $dt) {
                                 if (!in_array($dt->format('d/m/Y'), feriados($dt->format('Y'))) && in_array($dt->format('N'), $days)) {
@@ -220,6 +222,7 @@
                                     if ($hoursStage >= $hoursStageCourse) break;
                                 }
                             }
+                            echo("Teste 2"); // Teste
                         } else {
                             echo '<div class="alert alert-danger text-center mb-0 mt-3">Informe as hora(s)/minutos do(s) dia(s) de estágio!</div>';
                         }
@@ -262,29 +265,28 @@
             <?php
             // vamos montar o calendário
             if (isset($dateStartStage) && isset($dateEndSemester)) {
-                if ($hoursWeek != 0 || $minutesWeek != 0) {
-                    $yearStartStage = date("Y", strtotime(implode('-', array_reverse(explode('/', $dateStartStage)))));
-                    $yearEndSemester = date("Y", strtotime(implode('-', array_reverse(explode('/', $dateEndSemester)))));
+                echo("Teste 3"); // Teste
+                $yearStartStage = date("Y", strtotime(implode('-', array_reverse(explode('/', $dateStartStage)))));
+                $yearEndSemester = date("Y", strtotime(implode('-', array_reverse(explode('/', $dateEndSemester)))));
 
-                    if ($yearStartStage == $yearEndSemester) {
-                        $anos = [$yearStartStage];
-                    }else {
-                        for ($ano = $yearStartStage; $ano <= $yearEndSemester; $ano++) { 
-                            $anos[] = $ano;
-                        }
+                if ($yearStartStage == $yearEndSemester) {
+                    $anos = [$yearStartStage];
+                }else {
+                    for ($ano = $yearStartStage; $ano <= $yearEndSemester; $ano++) { 
+                        $anos[] = $ano;
                     }
+                }
 
-                    $_SESSION['dias_estagio'] = $days;
-                    $_SESSION['date_end_stage'] = $dateEndStage;
+                $_SESSION['dias_estagio'] = $days;
+                $_SESSION['date_end_stage'] = $dateEndStage;
 
-                    foreach ($anos as $key => $ano) {
-                        echo '<div class="d-flex flex-wrap justify-content-around bg-light border border-1 my-4">';
-                        echo '<h3 class="col-12 text-center my-4">CALENDÁRIO DE '. $ano .'</h3>';
-                        for ($mes = 1; $mes <= 12; $mes++) { 
-                            montar_calendario($mes, $ano);
-                        }
-                        echo '</div>';
+                foreach ($anos as $key => $ano) {
+                    echo '<div class="d-flex flex-wrap justify-content-around bg-light border border-1 my-4">';
+                    echo '<h3 class="col-12 text-center my-4">CALENDÁRIO DE '. $ano .'</h3>';
+                    for ($mes = 1; $mes <= 12; $mes++) { 
+                        montar_calendario($mes, $ano);
                     }
+                    echo '</div>';
                 }
             }
             ?>
@@ -292,6 +294,6 @@
         </div>
     </div>
 
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
 </body>
 </html>
