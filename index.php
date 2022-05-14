@@ -169,53 +169,57 @@
                         $hoursStage = 0;
                         $minutesStage = 0;
 
-                        $start = new \DateTime($_GET['date_start_stage']);
-                        $end = new \DateTime($_GET['date_end_semester']);
-                        $end->modify('+1 day');
-
-                        $total_days = $end->diff($start)->days;
-                        $period = new \DatePeriod($start, new \DateInterval('P1D'), $end);
-
                         $dateEndStage = '';
 
-                        foreach($period as $dt) {
-                            if (!in_array($dt->format('d/m/Y'), feriados($dt->format('Y'))) && in_array($dt->format('N'), $days)) {
-                                switch($dt->format('N')) {
-                                    case 1:
-                                        if ($monday) {
-                                            $hoursStage += $hoursMonday;
-                                            $minutesStage += $minutesMonday;
-                                        }
-                                        break;
-                                    case 2:
-                                        if ($tuesday) {
-                                            $hoursStage += $hoursTuesday;
-                                            $minutesStage += $minutesTuesday;
-                                        }
-                                        break;
-                                    case 3:
-                                        if ($wednesday) {
-                                            $hoursStage += $hoursWednesday;
-                                            $minutesStage += $minutesWednesday;
-                                        }
-                                        break;
-                                    case 4:
-                                        if ($thursday) {
-                                            $hoursStage += $hoursThursday;
-                                            $minutesStage += $minutesThursday;
-                                        }
-                                        break;
-                                    case 5:
-                                        if ($friday) {
-                                            $hoursStage += $hoursFriday;
-                                            $minutesStage += $minutesFriday;
-                                        }
-                                        break;
-                                }
+                        if ($hoursWeek != 0 || $minutesWeek != 0) {
+                            $start = new \DateTime($_GET['date_start_stage']);
+                            $end = new \DateTime($_GET['date_end_semester']);
+                            $end->modify('+1 day');
 
-                                $dateEndStage = $dt->format('d/m/Y');
-                                if ($hoursStage >= $hoursStageCourse) break;
+                            $total_days = $end->diff($start)->days;
+                            $period = new \DatePeriod($start, new \DateInterval('P1D'), $end);
+
+                            foreach($period as $dt) {
+                                if (!in_array($dt->format('d/m/Y'), feriados($dt->format('Y'))) && in_array($dt->format('N'), $days)) {
+                                    switch($dt->format('N')) {
+                                        case 1:
+                                            if ($monday) {
+                                                $hoursStage += $hoursMonday;
+                                                $minutesStage += $minutesMonday;
+                                            }
+                                            break;
+                                        case 2:
+                                            if ($tuesday) {
+                                                $hoursStage += $hoursTuesday;
+                                                $minutesStage += $minutesTuesday;
+                                            }
+                                            break;
+                                        case 3:
+                                            if ($wednesday) {
+                                                $hoursStage += $hoursWednesday;
+                                                $minutesStage += $minutesWednesday;
+                                            }
+                                            break;
+                                        case 4:
+                                            if ($thursday) {
+                                                $hoursStage += $hoursThursday;
+                                                $minutesStage += $minutesThursday;
+                                            }
+                                            break;
+                                        case 5:
+                                            if ($friday) {
+                                                $hoursStage += $hoursFriday;
+                                                $minutesStage += $minutesFriday;
+                                            }
+                                            break;
+                                    }
+
+                                    $dateEndStage = $dt->format('d/m/Y');
+                                    if ($hoursStage >= $hoursStageCourse) break;
+                                }
                             }
+                        } else {
+                            echo '<div class="alert alert-danger text-center mb-0 mt-3">Informe as hora(s)/minutos do(s) dia(s) de estágio!</div>';
                         }
                     } else {
                         echo '<div class="alert alert-danger text-center mb-0 mt-3">Selecione um dia da semana!</div>';

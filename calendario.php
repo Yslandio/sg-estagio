@@ -17,7 +17,6 @@ function feriados($ano) {
       '21/04/'.$ano,
       '01/05/'.$ano,
       date('d/m',$datas['corpus_cristi']).'/'.$ano,
-      '24/06/'.$ano, // Feriado Municipal São João
       '20/09/'.$ano, // Revolução Farroupilha \m/
       '12/10/'.$ano,
       '02/11/'.$ano,
@@ -25,6 +24,12 @@ function feriados($ano) {
       '25/12/'.$ano,
 
       // Adicionar feriados regionais
+      '06/03/'.$ano, // Data Magna do Estado de Pernambuco
+      '24/06/'.$ano, // Feriado Municipal São João
+      '15/08/'.$ano, // Nossa Senhora Rainha dos Anjos
+      '07/09/'.$ano, // Independência do Brasil
+      '21/09/'.$ano, // Emancipação Política do Município de Petrolina
+      '28/10/'.$ano, // Servidor Público – Feriado apenas para o funcionalismo público do Município de Petrolina
   );
   
   return $feriados;
