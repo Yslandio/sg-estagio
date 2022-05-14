@@ -2,6 +2,8 @@
 
 // função que contém os feriados nacionais e regionais de Petrolina
 function feriados($ano) {
+  echo "Início da função <br>"; // Teste
+
   $dia = 86400;
   $datas = array();
   $datas['pascoa'] = easter_date($ano);
@@ -31,6 +33,8 @@ function feriados($ano) {
       '21/09/'.$ano, // Emancipação Política do Município de Petrolina
       '28/10/'.$ano, // Servidor Público – Feriado apenas para o funcionalismo público do Município de Petrolina
   );
+
+  echo "Fim da função <br>"; // Teste
   
   return $feriados;
 }

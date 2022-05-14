@@ -182,7 +182,6 @@
                             foreach($period as $dt) {
                                 echo("Dentro do Foreach")."<br>"; // Teste
                                 var_dump($dt->format('Y'))."<br>"; // Teste
-                                var_dump(feriados('2022'))."<br>"; // Teste
                                 if (!in_array($dt->format('d/m/Y'), feriados($dt->format('Y'))) && in_array($dt->format('N'), $days)) {
                                     echo("Dentro do IF")."<br>"; // Teste
                                     switch($dt->format('N')) {
