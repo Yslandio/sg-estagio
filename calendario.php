@@ -5,7 +5,8 @@ function feriados($ano) {
 
   $dia = 86400;
   $datas = array();
-  // $datas['pascoa'] = easter_date($ano);
+  $datas['pascoa'] = easter_date($ano);
+  $datas['pascoa'] = easter_days($ano); 
   $datas['sexta_santa'] = $datas['pascoa'] - (2 * $dia);
   $datas['carnaval'] = $datas['pascoa'] - (47 * $dia);
   $datas['corpus_cristi'] = $datas['pascoa'] + (60 * $dia);
