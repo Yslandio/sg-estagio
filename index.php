@@ -256,7 +256,7 @@
 
         <hr class="my-4">
 
-        <!-- <div class="row">
+        <div class="row">
             <?php
             // vamos montar o calendário
             if (isset($dateStartStage) && isset($dateEndSemester)) {
@@ -285,7 +285,7 @@
             }
             ?>
             </div>
-        </div> -->
+        </div>
     </div>
 
     <script src="script.js"></script>
