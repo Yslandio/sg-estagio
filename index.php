@@ -254,7 +254,7 @@
             </div>
         </div>
 
-        <hr class="my-4">
+        <!-- <hr class="my-4"> -->
 
         <!-- <div class="row">
             <?php
