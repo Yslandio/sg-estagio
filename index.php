@@ -255,7 +255,6 @@
         </div>
 
         <hr class="my-4">
-        <p>Teste</p>
 
         <!-- <div class="row">
             <?php
