@@ -99,7 +99,7 @@
                         <input class="form-control w-auto" type="date" name="date_end_semester" value="<?= $_GET['date_end_semester'] ?? '' ?>">
                     </div>
                     <div class="m-2">
-                        <label class="form-label">Horas de estágio do curso:</label>
+                        <label class="form-label">Horas de estágio (Ex.: 50):</label>
                         <input class="form-control w-auto" type="number" name="hours_stage_course" min="0" value="<?= $_GET['hours_stage_course'] ?? '' ?>">
                     </div>
                     <div class="my-2">

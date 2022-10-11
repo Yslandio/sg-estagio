@@ -10,27 +10,27 @@ function feriados($ano) {
   $datas['carnaval'] = $datas['pascoa'] - (47 * $dia);
   $datas['corpus_cristi'] = $datas['pascoa'] + (60 * $dia);
   $feriados = array (
-      '01/01/'.$ano,
-      '02/02/'.$ano, // Navegantes
-      date('d/m',$datas['carnaval']).'/'.$ano,
-      date('d/m',$datas['sexta_santa']).'/'.$ano,
-      date('d/m',$datas['pascoa']).'/'.$ano,
-      '21/04/'.$ano,
-      '01/05/'.$ano,
-      date('d/m',$datas['corpus_cristi']).'/'.$ano,
-      '20/09/'.$ano, // Revolução Farroupilha \m/
-      '12/10/'.$ano,
-      '02/11/'.$ano,
-      '15/11/'.$ano,
-      '25/12/'.$ano,
-
-      // Adicionar feriados regionais
-      '06/03/'.$ano, // Data Magna do Estado de Pernambuco
-      '24/06/'.$ano, // Feriado Municipal São João
-      '15/08/'.$ano, // Nossa Senhora Rainha dos Anjos
-      '07/09/'.$ano, // Independência do Brasil
-      '21/09/'.$ano, // Emancipação Política do Município de Petrolina
-      '28/10/'.$ano, // Servidor Público – Feriado apenas para o funcionalismo público do Município de Petrolina
+    '01/01/'.$ano, // Reveillon
+    '02/02/'.$ano, // Navegantes
+    date('d/m',$datas['carnaval']).'/'.$ano,
+    date('d/m',$datas['sexta_santa']).'/'.$ano,
+    date('d/m',$datas['pascoa']).'/'.$ano,
+    '21/04/'.$ano,
+    '01/05/'.$ano,
+    date('d/m',$datas['corpus_cristi']).'/'.$ano,
+    '20/09/'.$ano, // Revolução Farroupilha \m/
+    '12/10/'.$ano, // Nossa Senhora Aparecida
+    '02/11/'.$ano, // Finados
+    '15/11/'.$ano, // Proclamação da República
+    '25/12/'.$ano, // Natal
+    '28/10/'.$ano, // Servidor Público – Feriado apenas para o funcionalismo público do Município de Petrolina
+    
+    // Adicionar feriados regionais
+    '06/03/'.$ano, // Data Magna do Estado de Pernambuco
+    '24/06/'.$ano, // Feriado Municipal São João
+    '15/08/'.$ano, // Nossa Senhora Rainha dos Anjos
+    '07/09/'.$ano, // Independência do Brasil
+    '21/09/'.$ano, // Emancipação Política do Município de Petrolina
   );
   
   return $feriados;
