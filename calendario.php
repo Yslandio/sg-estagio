@@ -18,7 +18,7 @@ function feriados($ano) {
     '21/04/'.$ano,
     '01/05/'.$ano,
     date('d/m',$datas['corpus_cristi']).'/'.$ano,
-    '20/09/'.$ano, // Revolução Farroupilha \m/
+    // '20/09/'.$ano, // Revolução Farroupilha
     '12/10/'.$ano, // Nossa Senhora Aparecida
     '02/11/'.$ano, // Finados
     '15/11/'.$ano, // Proclamação da República
